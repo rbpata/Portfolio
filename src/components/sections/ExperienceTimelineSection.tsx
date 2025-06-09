@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Briefcase, Zap } from 'lucide-react'; // Zap for projects or notable achievements
+import { Briefcase, Zap } from 'lucide-react';
 
 const timelineData = [
   {
@@ -9,7 +9,7 @@ const timelineData = [
     company: 'Innovatech Solutions',
     period: 'Summer 2022',
     description: 'Developed and implemented machine learning models for data analysis. Contributed to a major project on predictive maintenance, improving system efficiency by 15%. Collaborated with a team of 5 engineers.',
-    icon: <Briefcase className="text-primary" />,
+    icon: <Briefcase />,
   },
   {
     type: 'project',
@@ -17,7 +17,7 @@ const timelineData = [
     company: 'University Capstone Project',
     period: '2022 - 2023',
     description: 'Led a team of 3 to design and build a real-time sentiment analysis tool for social media trends. Utilized Python, NLTK, and Flask. Presented to faculty and industry panel.',
-    icon: <Zap className="text-accent" />,
+    icon: <Zap />,
   },
   {
     type: 'experience',
@@ -25,7 +25,7 @@ const timelineData = [
     company: 'CodeCrafters Inc.',
     period: 'Summer 2021',
     description: 'Assisted in the development of a web application using React and Node.js. Focused on front-end components and API integration. Gained experience in agile methodologies and version control.',
-    icon: <Briefcase className="text-primary" />,
+    icon: <Briefcase />,
   },
 ];
 
@@ -42,18 +42,17 @@ export default function ExperienceTimelineSection({ id }: { id: string }) {
             <div
               key={index}
               className={`mb-12 flex w-full animate-fade-in-up group ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} md:items-start`}
-              // @ts-ignore
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Desktop Spacer */}
               <div className="hidden md:block md:flex-1"></div>
-              
-              {/* Desktop Icon */}
-              <div className="hidden md:block relative w-12 h-12 rounded-full bg-background border-2 border-primary flex-shrink-0 flex items-center justify-center z-10 md:mx-4">
-                {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-6 w-6` })}
+
+              {/* Desktop Icon (no circle, icon size increased) */}
+              <div className="hidden md:block relative w-12 h-12 flex-shrink-0 flex items-center justify-center z-10 md:mx-4">
+                {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-8 w-8` })}
               </div>
 
-              {/* Mobile Dot and Line (adjusted for better alignment) */}
+              {/* Mobile Dot and Line */}
               <div className="md:hidden absolute left-3 top-1 h-full flex flex-col items-center">
                 <div className={`w-3 h-3 rounded-full border-2 border-background z-10 ${item.type === 'experience' ? 'bg-primary' : 'bg-accent'}`}></div>
                 {index < timelineData.length - 1 && (
@@ -62,11 +61,13 @@ export default function ExperienceTimelineSection({ id }: { id: string }) {
               </div>
 
               {/* Content Card */}
-              <div className={`md:flex-1 bg-background p-6 rounded-lg shadow-xl relative 
-                              ml-10 md:ml-0 {/* Adjusted: mobile margin-left, desktop margin reset (handled by icon's mx) */}
-                              before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-4 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform 
-                              ${index % 2 === 0 ? 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l' : 'md:before:right-[-8px] md:before:rotate-[135deg] md:before:border-t md:before:border-r'}
-                              `}>
+              <div className={`md:flex-1 bg-background p-6 rounded-lg shadow-xl relative
+                                ml-10 md:ml-0
+                                before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-4 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform
+                                ${index % 2 === 0
+                                  ? 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l'
+                                  : 'md:before:right-[-8px] md:before:rotate-45 md:before:border-t md:before:border-r'}
+                                `}>
                 <h3 className={`font-headline text-xl font-semibold mb-1 ${item.type === 'experience' ? 'text-primary' : 'text-accent'}`}>{item.title}</h3>
                 <p className="text-sm text-muted-foreground mb-1">{item.company}</p>
                 <p className="text-xs text-muted-foreground mb-3">{item.period}</p>
