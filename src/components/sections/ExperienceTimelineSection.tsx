@@ -41,29 +41,28 @@ export default function ExperienceTimelineSection({ id }: { id: string }) {
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className={`mb-12 flex w-full animate-fade-in-up group ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} md:items-start`}
+              className={`group animate-fade-in-up mb-10 md:mb-12 flex w-full items-start ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Desktop Spacer */}
               <div className="hidden md:block md:flex-1"></div>
 
-              {/* Desktop Icon (no circle, icon size increased) */}
-              <div className="hidden md:block relative w-12 h-12 flex-shrink-0 flex items-center justify-center z-10 md:mx-4">
-                {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-8 w-8` })}
+              {/* Desktop Icon */}
+              <div className="hidden md:flex md:flex-shrink-0 md:w-auto md:flex-col md:items-center z-10 md:mx-6 md:pt-1">
+                {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-10 w-10` })}
               </div>
 
               {/* Mobile Dot and Line */}
-              <div className="md:hidden absolute left-3 top-1 h-full flex flex-col items-center">
+              <div className="md:hidden absolute left-2.5 top-1.5 h-full flex flex-col items-center">
                 <div className={`w-3 h-3 rounded-full border-2 border-background z-10 ${item.type === 'experience' ? 'bg-primary' : 'bg-accent'}`}></div>
                 {index < timelineData.length - 1 && (
-                  <div className="flex-grow w-0.5 bg-border"></div>
+                  <div className="flex-grow w-1 bg-border"></div>
                 )}
               </div>
 
               {/* Content Card */}
-              <div className={`md:flex-1 bg-background p-6 rounded-lg shadow-xl relative
-                                ml-10 md:ml-0
-                                before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-4 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform
+              <div className={`md:flex-1 bg-background p-6 rounded-lg shadow-xl relative ml-10 md:ml-0 transition-all duration-300 transform group-hover:scale-[1.02] ${item.type === 'experience' ? 'group-hover:shadow-glow-primary' : 'group-hover:shadow-glow-accent'}
+                                before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-5 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform
                                 ${index % 2 === 0
                                   ? 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l'
                                   : 'md:before:right-[-8px] md:before:rotate-45 md:before:border-t md:before:border-r'}
