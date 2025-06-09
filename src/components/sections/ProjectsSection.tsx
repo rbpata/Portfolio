@@ -43,7 +43,7 @@ export default function ProjectsSection({ id }: { id: string }) {
     <section id={id} className="bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12 text-center text-primary">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projectsData.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}
