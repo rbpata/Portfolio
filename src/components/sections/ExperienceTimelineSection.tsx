@@ -46,26 +46,26 @@ export default function ExperienceTimelineSection({ id }: { id: string }) {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Desktop Spacer */}
-              <div className="hidden md:block md:w-1/2"></div>
+              <div className="hidden md:block md:flex-1"></div>
+              
               {/* Desktop Icon */}
-              <div className="hidden md:block relative w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10 mx-auto">
+              <div className="hidden md:block relative w-12 h-12 rounded-full bg-background border-2 border-primary flex-shrink-0 flex items-center justify-center z-10 md:mx-4">
                 {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-6 w-6` })}
               </div>
 
-              {/* Mobile Dot and Line */}
-              <div className="md:hidden absolute left-3 top-0 h-full flex flex-col items-center"> {/* left-3 for ~12px */}
-                <div className={`w-3 h-3 mt-1 rounded-full border-2 border-background z-10 ${item.type === 'experience' ? 'bg-primary' : 'bg-accent'}`}></div>
+              {/* Mobile Dot and Line (adjusted for better alignment) */}
+              <div className="md:hidden absolute left-3 top-1 h-full flex flex-col items-center">
+                <div className={`w-3 h-3 rounded-full border-2 border-background z-10 ${item.type === 'experience' ? 'bg-primary' : 'bg-accent'}`}></div>
                 {index < timelineData.length - 1 && (
-                  <div className="flex-grow w-0.5 bg-border mt-1"></div>
+                  <div className="flex-grow w-0.5 bg-border"></div>
                 )}
               </div>
 
               {/* Content Card */}
-              <div className={`md:w-1/2 bg-background p-6 rounded-lg shadow-xl relative 
-                              ml-10 md:ml-6 {/* ml-10 for mobile to clear dot/line */}
-                              ${index % 2 === 0 ? 'md:mr-6 md:ml-0' : ''}
+              <div className={`md:flex-1 bg-background p-6 rounded-lg shadow-xl relative 
+                              ml-10 md:ml-0 {/* Adjusted: mobile margin-left, desktop margin reset (handled by icon's mx) */}
                               before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-4 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform 
-                              ${index % 2 === 0 ? 'md:before:right-[-8px] md:before:rotate-[135deg] md:before:border-t md:before:border-r' : 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l'}
+                              ${index % 2 === 0 ? 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l' : 'md:before:right-[-8px] md:before:rotate-[135deg] md:before:border-t md:before:border-r'}
                               `}>
                 <h3 className={`font-headline text-xl font-semibold mb-1 ${item.type === 'experience' ? 'text-primary' : 'text-accent'}`}>{item.title}</h3>
                 <p className="text-sm text-muted-foreground mb-1">{item.company}</p>
