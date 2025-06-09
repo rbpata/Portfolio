@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Briefcase, Zap } from 'lucide-react'; // Zap for projects or notable achievements
 
@@ -34,26 +35,38 @@ export default function ExperienceTimelineSection({ id }: { id: string }) {
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-16 text-center text-primary">Experience & Milestones</h2>
         <div className="relative">
-          {/* Vertical line */}
+          {/* Vertical line for desktop */}
           <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-1 bg-border -translate-x-1/2"></div>
 
           {timelineData.map((item, index) => (
-            <div 
-              key={index} 
-              className={`mb-12 flex md:items-center w-full animate-fade-in-up ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            <div
+              key={index}
+              className={`mb-12 flex w-full animate-fade-in-up group ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} md:items-start`}
               // @ts-ignore
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="hidden md:block w-1/2"></div>
+              {/* Desktop Spacer */}
+              <div className="hidden md:block md:w-1/2"></div>
+              {/* Desktop Icon */}
               <div className="hidden md:block relative w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10 mx-auto">
                 {React.cloneElement(item.icon, { className: `${item.type === 'experience' ? 'text-primary' : 'text-accent'} h-6 w-6` })}
               </div>
-               {/* Mobile Dot */}
-              <div className="md:hidden absolute left-0 top-1 w-3 h-3 rounded-full bg-primary border-2 border-background z-10 transform -translate-x-1/2"></div>
 
-              <div className="md:w-1/2 bg-background p-6 rounded-lg shadow-xl md:ml-6 relative md:before:hidden before:content-[''] before:absolute before:top-4 before:left-[-8px] before:w-4 before:h-4 before:bg-background before:border-l before:border-t before:border-border before:transform before:rotate-45">
-                 {/* Mobile Connector Line */}
-                <div className="md:hidden h-full w-px bg-border absolute left-[5px] top-5 bottom-[-2.5rem] -z-1"></div>
+              {/* Mobile Dot and Line */}
+              <div className="md:hidden absolute left-3 top-0 h-full flex flex-col items-center"> {/* left-3 for ~12px */}
+                <div className={`w-3 h-3 mt-1 rounded-full border-2 border-background z-10 ${item.type === 'experience' ? 'bg-primary' : 'bg-accent'}`}></div>
+                {index < timelineData.length - 1 && (
+                  <div className="flex-grow w-0.5 bg-border mt-1"></div>
+                )}
+              </div>
+
+              {/* Content Card */}
+              <div className={`md:w-1/2 bg-background p-6 rounded-lg shadow-xl relative 
+                              ml-10 md:ml-6 {/* ml-10 for mobile to clear dot/line */}
+                              ${index % 2 === 0 ? 'md:mr-6 md:ml-0' : ''}
+                              before:hidden md:before:block md:before:content-[''] md:before:absolute md:before:top-4 md:before:w-4 md:before:h-4 md:before:bg-background md:before:border-border md:before:transform 
+                              ${index % 2 === 0 ? 'md:before:right-[-8px] md:before:rotate-[135deg] md:before:border-t md:before:border-r' : 'md:before:left-[-8px] md:before:rotate-45 md:before:border-b md:before:border-l'}
+                              `}>
                 <h3 className={`font-headline text-xl font-semibold mb-1 ${item.type === 'experience' ? 'text-primary' : 'text-accent'}`}>{item.title}</h3>
                 <p className="text-sm text-muted-foreground mb-1">{item.company}</p>
                 <p className="text-xs text-muted-foreground mb-3">{item.period}</p>

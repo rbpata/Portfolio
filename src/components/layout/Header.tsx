@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -45,7 +46,7 @@ export default function Header() {
           Ram's Refraction
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -64,7 +65,7 @@ export default function Header() {
           </Button>
         </nav>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -73,7 +74,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-md shadow-lg pb-6">
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-md shadow-lg pb-6">
           <nav className="flex flex-col items-center space-y-4 pt-4">
             {navLinks.map((link) => (
               <Link
