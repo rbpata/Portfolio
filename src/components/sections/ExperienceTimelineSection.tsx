@@ -1,3 +1,4 @@
+import React from 'react';
 import { Briefcase, Zap } from 'lucide-react'; // Zap for projects or notable achievements
 
 const timelineData = [
