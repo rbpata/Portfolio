@@ -3,16 +3,16 @@ import { GraduationCap } from 'lucide-react';
 
 const educationData = [
   {
-    degree: 'Master of Science in Artificial Intelligence',
-    institution: 'University of Tech Excellence',
-    period: '2023 - Present',
+    degree: 'Master of Computer Applications',
+    institution: 'Dept. of Computer Science, Gujarat University',
+    period: '2024 - Present',
     details: 'Focusing on advanced machine learning algorithms, deep learning, and AI ethics. Currently working on a thesis related to explainable AI.',
     icon: <GraduationCap className="h-8 w-8 text-primary" />
   },
   {
-    degree: 'Bachelor of Technology in Computer Science',
-    institution: 'Institute of Foundational Engineering',
-    period: '2019 - 2023',
+    degree: 'Bachelor of Computer Applications',
+    institution: 'CPICA, Gujarat University',
+    period: '2021 - 2024',
     details: 'Graduated with honors. Key coursework in data structures, algorithms, software engineering, and database management. Capstone project on a predictive analytics model.',
     icon: <GraduationCap className="h-8 w-8 text-primary" />
   },
