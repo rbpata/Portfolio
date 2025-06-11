@@ -21,9 +21,9 @@ export default function Footer() {
         <p className="text-sm">
           &copy; {currentYear} Ram. All rights reserved.
         </p>
-        <p className="text-xs mt-2">
+        {/* <p className="text-xs mt-2">
           Built with Next.js and Tailwind CSS.
-        </p>
+        </p> */}
       </div>
     </footer>
   );
