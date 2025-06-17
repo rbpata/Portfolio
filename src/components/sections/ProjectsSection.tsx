@@ -2,7 +2,7 @@ import ProjectCard from './ProjectCard';
 
 const projectsData = [
   {
-    title: 'Tomato Dieseas Classifier',
+    title: 'Object Detection Using OpenCV',
     description: 'An intelligent chatbot built with NLP techniques for customer support automation.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'chatbot interface',
@@ -11,7 +11,7 @@ const projectsData = [
     repoLink: '#',
   },
   {
-    title: 'Object Detection Using OpenCV',
+    title: 'Tomato Dieseas Classifier',
     description: 'A mobile application that identifies objects in real-time using a deep learning model.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'image recognition',
@@ -20,7 +20,7 @@ const projectsData = [
     repoLink: '#',
   },
   {
-    title: 'Portfolio Website V1',
+    title: 'IPL Win Prediction',
     description: 'My first personal portfolio website showcasing early projects and skills. Built with vanilla HTML, CSS, and JS.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'website design',

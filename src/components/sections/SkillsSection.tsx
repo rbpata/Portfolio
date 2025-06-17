@@ -5,7 +5,7 @@ const skillsData = [
   {
     category: 'Programming Languages',
     icon: <Code className="h-8 w-8 text-accent" />,
-    items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++'],
+    items: ['Python', 'JavaScript', 'Java', 'C++', "C", "PHP"],
   },
   {
     category: 'AI/ML',
@@ -20,7 +20,7 @@ const skillsData = [
   {
     category: 'Databases',
     icon: <Database className="h-8 w-8 text-accent" />,
-    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'],
+    items: ['MongoDB', 'MySQL', 'Firebase', 'PostgreSQL'],
   },
   {
     category: 'Tools & Platforms',
