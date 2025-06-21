@@ -42,15 +42,15 @@ export default function ContactSection({ id }: { id: string }) {
             </p>
             <div className="space-y-4">
               <a href="mailto:ram.student@example.com" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
-                <Mail className="h-6 w-6 mr-3 text-accent" /> ram.student@example.com
+                <Mail className="h-6 w-6 mr-3 text-accent" /> imrbp.2k04@gmail.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
-                <Phone className="h-6 w-6 mr-3 text-accent" /> +1 (234) 567-890 (Placeholder)
+              <a href="tel:+919724160978" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
+                <Phone className="h-6 w-6 mr-3 text-accent" /> +91 9724160978 (Placeholder)
               </a>
-              <Link href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
+              <Link href="https://linkedin.com/in/ram-pata" target="_blank" rel="noopener noreferrer" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
                 <Linkedin className="h-6 w-6 mr-3 text-accent" /> LinkedIn Profile
               </Link>
-              <Link href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
+              <Link href="https://github.com/rbpata" target="_blank" rel="noopener noreferrer" className="flex items-center text-foreground hover:text-primary transition-colors text-lg">
                 <Github className="h-6 w-6 mr-3 text-accent" /> GitHub Profile
               </Link>
             </div>
