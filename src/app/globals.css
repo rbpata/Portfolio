@@ -4,45 +4,46 @@
 
 @layer base {
   :root {
-    --background: 210 30% 19%; /* #222F3E - Dark Desaturated Blue */
-    --foreground: 0 0% 98%; /* Light Grayish Blue / Almost White */
+    /* Gorgeous gradient-inspired color scheme */
+    --background: 240 10% 3.9%; /* Deep dark blue-black */
+    --foreground: 0 0% 98%; /* Pure white text */
 
-    --card: 210 30% 24%; /* Slightly lighter than background */
+    --card: 240 10% 8%; /* Slightly lighter card background */
     --card-foreground: 0 0% 98%;
 
-    --popover: 210 30% 22%; /* Similar to card */
+    --popover: 240 10% 6%; /* Elegant popover background */
     --popover-foreground: 0 0% 98%;
 
-    --primary: 197 71% 53%; /* #29ABE2 - Vibrant Blue */
-    --primary-foreground: 210 40% 98%; /* Light color for contrast */
+    --primary: 262 83% 58%; /* Vibrant purple */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 30% 35%; /* Muted blue, darker than primary */
+    --secondary: 217 91% 60%; /* Beautiful blue */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 30% 28%; /* Subtle, between card and background */
-    --muted-foreground: 210 20% 65%; /* Lighter gray for muted text */
+    --muted: 240 10% 12%; /* Subtle muted background */
+    --muted-foreground: 240 5% 65%; /* Soft muted text */
 
-    --accent: 265 43% 73%; /* #B39DDB - Subtle Lavender */
-    --accent-foreground: 210 30% 10%; /* Dark color for contrast on accent */
+    --accent: 173 80% 36%; /* Gorgeous teal accent */
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 70% 50%; /* Standard red */
+    --destructive: 0 84% 60%; /* Bright red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 30% 30%; /* Visible border on dark background */
-    --input: 210 30% 28%; /* Input background */
-    --ring: 197 71% 63%; /* Primary color, slightly lighter for focus rings */
+    --border: 240 10% 15%; /* Elegant borders */
+    --input: 240 10% 12%; /* Input backgrounds */
+    --ring: 262 83% 68%; /* Purple ring for focus states */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly larger radius for modern look */
 
-    /* Sidebar specific colors - can be adjusted or removed if sidebar component is not used heavily with its own theme */
-    --sidebar-background: 210 30% 15%; /* Darker than main background */
+    /* Enhanced sidebar colors */
+    --sidebar-background: 240 10% 2%; /* Darker sidebar */
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 197 71% 53%;
+    --sidebar-primary: 262 83% 58%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 265 43% 73%;
-    --sidebar-accent-foreground: 210 30% 10%;
-    --sidebar-border: 210 30% 25%;
-    --sidebar-ring: 197 71% 63%;
+    --sidebar-accent: 173 80% 36%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 10%;
+    --sidebar-ring: 262 83% 68%;
   }
 
   /*
@@ -62,6 +63,9 @@
   body {
     @apply bg-background text-foreground;
     @apply antialiased;
+    /* Add a subtle gradient background */
+    background: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 10% 6%) 100%);
+    min-height: 100vh;
   }
   section {
     @apply py-16 md:py-24;
@@ -70,20 +74,48 @@
     @apply px-4 mx-auto max-w-screen-xl; /* Standard container */
   }
 
-  /* Add custom scrollbar styles for a more integrated look */
+  /* Enhanced scrollbar styles for the new color scheme */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background) / 0.5);
-    border-radius: 10px;
+    background: hsl(var(--background) / 0.8);
+    border-radius: 12px;
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary) / 0.7);
-    border-radius: 10px;
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    border-radius: 12px;
+    border: 2px solid hsl(var(--background) / 0.8);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary));
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--accent) / 0.9) 100%);
+  }
+
+  /* Add beautiful gradient text effects */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Add subtle glow effects */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  }
+
+  /* Beautiful card hover effects */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px hsl(var(--primary) / 0.2);
   }
 }

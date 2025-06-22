@@ -112,8 +112,14 @@ export default {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
       },
       boxShadow: {
-        'glow-primary': '0 0 15px 5px hsl(var(--primary) / 0.3)',
-        'glow-accent': '0 0 15px 5px hsl(var(--accent) / 0.2)',
+        'glow-primary': '0 0 20px 5px hsl(var(--primary) / 0.4)',
+        'glow-accent': '0 0 20px 5px hsl(var(--accent) / 0.3)',
+        'glow-secondary': '0 0 20px 5px hsl(var(--secondary) / 0.3)',
+        'glow-purple': '0 0 30px 10px hsl(262 83% 58% / 0.2)',
+        'glow-teal': '0 0 30px 10px hsl(173 80% 36% / 0.2)',
+        'glow-blue': '0 0 30px 10px hsl(217 91% 60% / 0.2)',
+        'card-elevated': '0 10px 40px hsl(var(--primary) / 0.15)',
+        'button-glow': '0 0 15px hsl(var(--primary) / 0.5)',
       }
     },
   },
