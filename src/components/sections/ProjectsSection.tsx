@@ -2,7 +2,7 @@ import ProjectCard from './ProjectCard';
 
 const projectsData = [
   {
-    title: 'Object Detection Using OpenCV',
+    title: '',
     description: 'An intelligent chatbot built with NLP techniques for customer support automation.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'Object Detection',
@@ -11,7 +11,7 @@ const projectsData = [
     repoLink: '#',
   },
   {
-    title: 'Tomato Dieseas Classifier',
+    title: 'Classifier',
     description: 'A mobile application that identifies objects in real-time using a deep learning model.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'image recognition',
